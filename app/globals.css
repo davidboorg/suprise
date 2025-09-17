@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+:root {
+  --background: #F7F5F0; /* off-white */
+  --foreground: #0A0A0A; /* near-black */
+  --ink: #EAE8E2;
+  --ink-dim: #BEBBB1;
+  --accent-mint: #B3FFCB;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-base-900: #0A0A0A;
+  --color-base-800: #121212;
+  --color-base-100: #F7F5F0;
+  --color-ink: var(--ink);
+  --color-ink-dim: var(--ink-dim);
+  --color-accent-mint: var(--accent-mint);
+  --radius-xl: 1.25rem;
+  --radius-2xl: 1.75rem;
+  --font-sans: var(--font-ui);
+  --font-serif: var(--font-serif);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0A0A0A;
+    --foreground: #F7F5F0;
+  }
+}
+
+html { color-scheme: light dark; }
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* Focus styles */
+:where(a, button, input, textarea, select, [tabindex]) {
+  outline: none;
+}
+
+:where(a, button, input, textarea, select, [tabindex]):focus-visible {
+  outline: 2px solid var(--accent-mint);
+  outline-offset: 2px;
+}
