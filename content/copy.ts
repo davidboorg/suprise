@@ -94,8 +94,8 @@ export const copy = {
       blurb:
         "Award-winning entrepreneurs blending creativity, culture, tech and venture logic.",
       people: [
-        { name: "David Borg", role: "Founder", linkedin: "https://www.linkedin.com/in/davidborg/" },
-        { name: "Johan Pihl", role: "Founder", linkedin: "https://www.linkedin.com/in/johanpihl/" },
+        { name: "David Borg", role: "Founder", email: "david@surpriseventures.io" },
+        { name: "Johan Pihl", role: "Founder", email: "johan@surpriseventures.io" },
       ],
     },
     access: {
@@ -206,8 +206,8 @@ export const copy = {
       blurb:
         "Prisbelönta entreprenörer som förenar kreativitet, kultur, teknik och venture-logik.",
       people: [
-        { name: "David Borg", role: "Grundare", linkedin: "https://www.linkedin.com/in/davidborg/" },
-        { name: "Johan Pihl", role: "Grundare", linkedin: "https://www.linkedin.com/in/johanpihl/" },
+        { name: "David Borg", role: "Grundare", email: "david@surpriseventures.io" },
+        { name: "Johan Pihl", role: "Grundare", email: "johan@surpriseventures.io" },
       ],
     },
     access: {

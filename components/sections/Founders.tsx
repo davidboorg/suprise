@@ -15,9 +15,7 @@ export default function Founders() {
         {t.founders.people.map((p, i) => (
           <Reveal key={i} delay={i * 0.05}>
             <a
-              href={p.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={`mailto:${p.email}`}
               className="flex items-center gap-4 rounded-xl border border-base-800/20 p-5 hover:border-base-800/40 transition-colors"
             >
               <div className="h-12 w-12 shrink-0 rounded-full bg-base-800/10" aria-hidden />
