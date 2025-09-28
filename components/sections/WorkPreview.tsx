@@ -33,7 +33,7 @@ export default function WorkPreview() {
   );
 }
 
-function WorkCard({ item, index, onClick }: { item: any; index: number; onClick: () => void }) {
+function WorkCard({ item, index, onClick }: { item: { caption: string; outcomes: readonly string[] }; index: number; onClick: () => void }) {
   const { ref, visible } = useReveal<HTMLButtonElement>({ threshold: 0.15 });
   const style = { transitionDelay: `${index * 120}ms` } as React.CSSProperties;
   return (
