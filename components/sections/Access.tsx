@@ -2,7 +2,6 @@
 
 import { useI18n } from "@/lib/i18n";
 import Reveal from "@/components/Reveal";
-import EmailForm from "@/components/EmailForm";
 
 export default function AccessSection() {
   const { t } = useI18n();

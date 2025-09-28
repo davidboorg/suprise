@@ -23,11 +23,7 @@ async function getFont() {
   return spaceGroteskData;
 }
 
-export default async function Image({
-  params,
-}: {
-  params: Record<string, string | string[]>;
-}) {
+export default async function Image() {
   const fontData = await getFont();
 
   const title = "Suprise — Creative Tech & Venture Studio";
