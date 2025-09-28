@@ -3,10 +3,8 @@
 import { useI18n } from "@/lib/i18n";
 import Reveal from "@/components/Reveal";
 import LocaleToggle from "@/components/LocaleToggle";
-import SignalsSection from "@/components/sections/Signals";
 import WhatWeAre from "@/components/sections/WhatWeAre";
 import Methods from "@/components/sections/Methods";
-import WorkPreview from "@/components/sections/WorkPreview";
 import Principles from "@/components/sections/Principles";
 import Founders from "@/components/sections/Founders";
 import AccessSection from "@/components/sections/Access";
@@ -33,7 +31,7 @@ function Hero() {
         </Reveal>
         <Reveal delay={0.2}>
           <div className="mt-10 flex gap-4">
-            <SpotlightButton>
+            <SpotlightButton onClick={() => (window.location.href = "mailto:david@surpriseventures.io?subject=Request%20Access") }>
               {t.hero.ctaPrimary}
             </SpotlightButton>
             <button className="px-6 py-3 rounded-full border border-base-800/20 hover:border-base-800/40 transition-colors">
@@ -55,10 +53,8 @@ export default function Home() {
       </header>
       <main>
         <Hero />
-        <SignalsSection />
         <WhatWeAre />
         <Methods />
-        <WorkPreview />
         <Principles />
         <Founders />
         <AccessSection />

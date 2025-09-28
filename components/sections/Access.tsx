@@ -14,7 +14,14 @@ export default function AccessSection() {
       <Reveal delay={0.05}>
         <p className="text-ink-dim max-w-[60ch] mb-8">{t.access.prompt}</p>
       </Reveal>
-      <EmailForm />
+      <div className="mt-6">
+        <a
+          href="mailto:david@surpriseventures.io?subject=Request%20Access"
+          className="inline-block px-6 py-3 rounded-full bg-foreground text-background hover:opacity-90"
+        >
+          {t.access.submit}
+        </a>
+      </div>
     </section>
   );
 }

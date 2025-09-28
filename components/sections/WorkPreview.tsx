@@ -2,12 +2,10 @@
 
 import { useState } from "react";
 import { useI18n } from "@/lib/i18n";
-import Reveal from "@/components/Reveal";
 import dynamic from "next/dynamic";
+import { useReveal } from "@/hooks/useReveal";
 
-const WorkModal = dynamic(() => import("@/components/WorkModal"), {
-  ssr: false,
-});
+const WorkModal = dynamic(() => import("@/components/WorkModal"), { ssr: false });
 
 export default function WorkPreview() {
   const { t } = useI18n();
@@ -16,14 +14,17 @@ export default function WorkPreview() {
 
   return (
     <section className="max-w-[1280px] mx-auto px-6 md:px-10 py-20 md:py-28">
-      <Reveal>
-        <h2 className="font-serif text-2xl md:text-3xl mb-6">Signals / Work</h2>
-      </Reveal>
+      <h2 className="font-serif text-2xl md:text-3xl mb-6">Signals / Work</h2>
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
-        {items.map((it, i) => (
-          <Reveal key={i} delay={i * 0.05}>
+        {items.map((it, i) => {
+          const { ref, visible } = useReveal<HTMLButtonElement>({ threshold: 0.15 });
+          const style = { transitionDelay: `${i * 120}ms` } as React.CSSProperties;
+          return (
             <button
-              className="group relative aspect-[4/3] w-full overflow-hidden rounded-xl border border-base-800/20 bg-base-100/40 text-left"
+              key={i}
+              ref={ref}
+              style={style}
+              className={`reveal ${visible ? "reveal--in" : ""} group relative aspect-[4/3] w-full overflow-hidden rounded-xl border border-base-800/20 bg-base-100/40 text-left`}
               onClick={() => setOpenIdx(i)}
             >
               <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(0,0,0,0.2),transparent_40%,rgba(0,0,0,0.25))]" />
@@ -32,8 +33,8 @@ export default function WorkPreview() {
                 {it.caption}
               </span>
             </button>
-          </Reveal>
-        ))}
+          );
+        })}
       </div>
 
       {openIdx !== null && (
